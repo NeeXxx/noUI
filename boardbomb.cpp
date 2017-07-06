@@ -1,4 +1,5 @@
 #include "board.h"
+#include "direction.h"
 
 void board:: trySetBomb(player& p)
 {
@@ -26,22 +27,22 @@ void board::explode(bomb b)
 
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
-        m.blockAt(tx,ty).explode();
+        m.blockAt(tx,ty).explode(dirDown);
         tx++;
     }
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
-        m.blockAt(tx,ty).explode();
+        m.blockAt(tx,ty).explode(dirUp);
         tx--;
     }
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
-        m.blockAt(tx,ty).explode();
+        m.blockAt(tx,ty).explode(dirRight);
         ty++;
     }
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
-        m.blockAt(tx,ty).explode();
+        m.blockAt(tx,ty).explode(dirLeft);
         ty--;
     }
 }

@@ -50,8 +50,9 @@ bool block::canExplode()
     return true;
 }
 
-void block::explode()
+void block::explode(direction dir)
 {
     destroyAbove();
-    addAbove(aArrowUp);//此处有问题，不同方向的怎么办
+    const above arrows[4]={aArrowUp,aArrowDown,aArrowLeft,aArrowRight};
+    addAbove(arrows[dir]);//此处有问题，不同方向的怎么办
 }

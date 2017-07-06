@@ -2,6 +2,7 @@
 #define BLOCK_H
 
 #include "substances.h"
+#include "direction.h"
 
 class block
 {
@@ -26,7 +27,7 @@ public:
     bool haveAbove();
 
     bool canExplode();
-    void explode();
+    void explode(direction);
 
     substance appearance(); //画图必须调用appearance
 
