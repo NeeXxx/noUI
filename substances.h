@@ -5,7 +5,8 @@ enum underSubstance{water,house,ground,tree,bridge};//枚举的顺序和数组�
 enum aboveSubstance{sBomb,arrowUp,arrowDown,arrowLeft,arrowRight,
                     player1,player2,
                     wood,air,
-                    bubble,shoe,drug};
+                    bubble,shoe,drug,
+                    p1ob,p2ob};
 
 //希望底部的东西是不可改变的
 class under
@@ -59,12 +60,15 @@ const above aBomb(sBomb,false,false),//不可推
             aAir(air,true,false),
             aBubble(bubble,true,false),
             aShoe(shoe,true,false),
-            aDrug(drug,true,false);//可进入
+            aDrug(drug,true,false),
+            aP1OB(p1ob,true,false),
+            aP2OB(p2ob,true,false);//可进入
 
-const above aArray[12]={aBomb,aArrowUp,aArrowDown,aArrowLeft,aArrowRight,
+const above aArray[14]={aBomb,aArrowUp,aArrowDown,aArrowLeft,aArrowRight,
                     aPlayer1,aPlayer2,
                     aWood,aAir,
-                    aBubble,aShoe,aDrug};
+                    aBubble,aShoe,aDrug,
+                    aP1OB,aP2OB};
 
 class substance
 {

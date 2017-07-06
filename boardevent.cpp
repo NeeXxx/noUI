@@ -15,6 +15,8 @@ void board::paintEvent(QPaintEvent*)
     aM[player2]="player2.png";
     aM[wood]="wood.png";
     aM[sBomb]="bomb.png";
+    aM[p1ob]="player1_on_bomb.png";
+    aM[p2ob]="player2_on_bomb.png";
     aM[arrowDown]=aM[arrowLeft]=aM[arrowRight]=aM[arrowUp]="flame.png";
     uM[house]="house.png";
     uM[tree]="tree.png";

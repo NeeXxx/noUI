@@ -17,5 +17,7 @@
         <file>images/shoe.png</file>
         <file>images/tree.png</file>
         <file>images/wood.png</file>
+        <file>images/player1_on_bomb.png</file>
+        <file>images/player2_on_bomb.png</file>
     </qresource>
 </RCC>

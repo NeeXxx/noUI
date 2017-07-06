@@ -15,7 +15,7 @@ myMap::myMap():
 {0,2,2,2,2,0,2,2,2,2} },
     aboveMapForinit{
 {},
-        // player1 5 , player2 6 , wood 7 , air 8 , bubble 9 , shoe 10 , drug 11
+        // player1 5 , player2 6 , wood 7 , air 8 , bubble 9 , shoe 10 , drug 11 , p1ob 12 , p2ob 13
 {0,8,8,8,8,8,8,8,8,8},
 {0,8,8,8,8,8,8,8,8,8},
 {0,8,8,8,8,8,8,8,8,8},
