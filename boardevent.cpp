@@ -4,7 +4,7 @@ void board::paintEvent(QPaintEvent*)
 {
     //绘制地图底板
     QPainter painter(this);
-    painter.translate(20,40);
+    //painter.translate(20,100);
     QPixmap tground;
     tground.load(":/images/images/ground.png");
     painter.drawPixmap(0,0,900,900,tground);
@@ -99,7 +99,7 @@ void board::timerEvent(QTimerEvent* event)
         repaint();
         while(!bombQueue.empty() && bombQueue.front().canExplode(cnt))
         {
-            bombQueue.front().explode();
+            explode(bombQueue.front());
             bombQueue.pop();
         }
     }

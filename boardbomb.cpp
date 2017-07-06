@@ -16,16 +16,32 @@ void board::setBomb(player& p)
 
 void board::explode(bomb b)
 {
-    /*
-    (player&) p[3]={0,p1,p2};
     int x=b.getX(),y=b.getY();
-    p[b.getSetter()].bombExplode();
+    int setter=b.getSetter();
+    if(setter==1)
+        p1.bombExplode();
+    else
+        p2.bombExplode();
     int power=b.getPower();
 
-    int tx=x,ty=y;
-    while(m.blockAt(tx,ty).canExplode())
+    for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
         m.blockAt(tx,ty).explode();
+        tx++;
     }
-    */
+    for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
+    {
+        m.blockAt(tx,ty).explode();
+        tx--;
+    }
+    for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
+    {
+        m.blockAt(tx,ty).explode();
+        ty++;
+    }
+    for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
+    {
+        m.blockAt(tx,ty).explode();
+        ty--;
+    }
 }

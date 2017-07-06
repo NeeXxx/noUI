@@ -52,5 +52,6 @@ bool block::canExplode()
 
 void block::explode()
 {
-
+    destroyAbove();
+    addAbove(aArrowUp);//此处有问题，不同方向的怎么办
 }
