@@ -24,6 +24,8 @@ public:
 
     bool canSetBomb();
 
+    void beTrapped();
+
 private:
     int speed;
     int bombPower;

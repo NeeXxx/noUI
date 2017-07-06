@@ -54,6 +54,10 @@ private:
     void initPlayer1();
     void initPlayer2();
 
+    void trapPlayer(player&);
+
+    void tryTrapPlayer(int,int);
+
 protected:
     void paintEvent(QPaintEvent*) override;
     void timerEvent(QTimerEvent*) override;

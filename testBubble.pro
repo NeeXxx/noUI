@@ -33,7 +33,8 @@ SOURCES += \
     bomb.cpp \
     myMap.cpp \
     player.cpp \
-    boardbomb.cpp
+    boardbomb.cpp \
+    boardplayer.cpp
 
 HEADERS += \
         widget.h \

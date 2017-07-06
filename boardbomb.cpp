@@ -29,20 +29,24 @@ void board::explode(bomb b)
     {
         m.blockAt(tx,ty).explode(dirDown);
         tx++;
+        tryTrapPlayer(tx,ty);
     }
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
         m.blockAt(tx,ty).explode(dirUp);
         tx--;
+        tryTrapPlayer(tx,ty);
     }
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
         m.blockAt(tx,ty).explode(dirRight);
         ty++;
+        tryTrapPlayer(tx,ty);
     }
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
         m.blockAt(tx,ty).explode(dirLeft);
         ty--;
+        tryTrapPlayer(tx,ty);
     }
 }

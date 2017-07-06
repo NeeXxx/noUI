@@ -54,5 +54,5 @@ void block::explode(direction dir)
 {
     destroyAbove();
     const above arrows[4]={aArrowUp,aArrowDown,aArrowLeft,aArrowRight};
-    addAbove(arrows[dir]);//此处有问题，不同方向的怎么办
+    addAbove(arrows[dir]);
 }

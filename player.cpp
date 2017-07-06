@@ -32,3 +32,8 @@ bool player::canSetBomb()
 {
     return bombLeft>0;
 }
+
+void player::beTrapped()
+{
+    x=0,y=0;
+}
