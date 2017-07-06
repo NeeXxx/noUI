@@ -61,14 +61,14 @@ const above aBomb(sBomb,false,false),//不可推
             aBubble(bubble,true,false),
             aShoe(shoe,true,false),
             aDrug(drug,true,false),
-            aP1OB(p1ob,true,false),
-            aP2OB(p2ob,true,false);//可进入
+            aP1ob(p1ob,true,false),
+            aP2ob(p2ob,true,false);//可进入
 
 const above aArray[14]={aBomb,aArrowUp,aArrowDown,aArrowLeft,aArrowRight,
                     aPlayer1,aPlayer2,
                     aWood,aAir,
                     aBubble,aShoe,aDrug,
-                    aP1OB,aP2OB};
+                    aP1ob,aP2ob};
 
 class substance
 {
