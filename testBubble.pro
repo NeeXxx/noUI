@@ -42,7 +42,8 @@ HEADERS += \
     bomb.h \
     myMap.h \
     player.h \
-    substances.h
+    substances.h \
+    direction.h
 
 RESOURCES += \
     res.qrc
