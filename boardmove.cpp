@@ -37,16 +37,15 @@ bool board::tryMoveRight(player& p)
 
 bool board::tryMove(int x1,int y1,int x2,int y2) //from 1 to 2
 {
+    if(!inMap(x2,y2))
+        return false;
     block& target=m.blockAt(x2,y2);
-    //qDebug()<<x1<<" "<<y1<<" "<<x2<<" "<<y2<<endl;
     if(target.inable())
     {
-        //ANGRY(1)
         if(target.hidable())
             return tryInToHide(x1,y1,x2,y2);
         else
         {
-            //ANGRY(2)
             return trySimpleMove(x1,y1,x2,y2);
         }
     }
@@ -56,7 +55,6 @@ bool board::tryMove(int x1,int y1,int x2,int y2) //from 1 to 2
             return tryPush(x1,y1,x2,y2);
         else
         {
-            //ANGRY(!)
             return false;
         }
     }
@@ -73,6 +71,8 @@ bool board::tryPush(int x1,int y1,int x2,int y2)
 {
     block& target1=m.blockAt(x2,y2);
     int x3=x2+x2-x1,y3=y2+y2-y1;
+    if(!inMap(x3,y3))
+        return false;
     block& target2=m.blockAt(x3,y3);
 
     bool flag;

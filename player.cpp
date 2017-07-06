@@ -12,7 +12,7 @@ player::player()
 player::player(int tx,int ty)
 {
     x=tx,y=ty;
-    bombPower=1;
+    bombPower=2;
     bombNum=1;
     bombLeft=1;
     speed=1;

@@ -52,5 +52,5 @@ bool block::canExplode()
 
 void block::explode()
 {
-
+    destroyAbove();
 }
