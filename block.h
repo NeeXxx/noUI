@@ -18,6 +18,7 @@ public:
     void destroyAbove();
     void addAbove(above ta);
     above getAbove() { return a; }
+    bool haveFlame();
 
     void setUnder(under tu);
 

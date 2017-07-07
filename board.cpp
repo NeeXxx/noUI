@@ -14,7 +14,7 @@ board::board(QWidget* parent):QFrame(parent),p1(1,1),p2(3,8)
     setFrameStyle(QFrame::Panel | QFrame::Sunken);
     setFocusPolicy(Qt::StrongFocus);
     cnt=0;
-    timer.start(10,this);
+    timer.start(200,this);
     resize(1000,1000);
 
     initPlayer1();

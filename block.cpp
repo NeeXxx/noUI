@@ -10,6 +10,14 @@ void block::addAbove(above ta)
     a=ta;
 }
 
+bool block::haveFlame()
+{
+    return a==aArrowDown ||
+           a==aArrowLeft ||
+           a==aArrowRight ||
+           a==aArrowUp;
+}
+
 void block::setUnder(under tu)
 {
     u=tu;

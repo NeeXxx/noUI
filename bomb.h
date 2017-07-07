@@ -17,7 +17,7 @@ private:
     int x,y;
     int power;
     int setTime;
-    const int explodeTime=30;
+    const int explodeTime=15;
 };
 
 #endif // BOMB_H

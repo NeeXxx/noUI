@@ -14,6 +14,7 @@ public:
     block& blockAt(int x,int y) { return content[x][y]; }
     void moveAToB(int x1,int y1,int x2,int y2);
     void hideAToB(int x1,int y1,int x2,int y2);
+    void cleanFlames();
 };
 
 #endif // MYMAP_H

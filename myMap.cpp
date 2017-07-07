@@ -55,3 +55,13 @@ void myMap::hideAToB(int x1,int y1,int x2,int y2)
     blockAt(x1,y1).destroyAbove();
 }
 //缺少检测
+
+void myMap::cleanFlames()
+{
+    for(int i=1;i<=9;i++)
+        for(int j=1;j<=9;j++)
+        {
+            if(content[i][j].haveFlame())
+                content[i][j].destroyAbove();
+        }
+}

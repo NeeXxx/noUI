@@ -93,17 +93,15 @@ void board::keyPressEvent(QKeyEvent* event)
 
 void board::timerEvent(QTimerEvent* event)
 {
-
     if(event->timerId()==timer.timerId())
     {
         cnt++;
-        //qDebug()<<p2->getX()<<" "<<p2->getY()<<endl;
-        //qDebug()<<"naive"<<cnt<<endl;
-        repaint();
         while(!bombQueue.empty() && bombQueue.front().canExplode(cnt))
         {
             explode(bombQueue.front());
             bombQueue.pop();
         }
+        repaint();
+        m.cleanFlames();
     }
 }
