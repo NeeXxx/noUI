@@ -21,6 +21,7 @@ void board::paintEvent(QPaintEvent*)
     aM[arrowUp]="flame_up.png";
     aM[arrowLeft]="flame_left.png";
     aM[arrowRight]="flame_right.png";
+    aM[flame]="flame.png";
     uM[house]="house.png";
     uM[tree]="tree.png";
     uM[water]=uM[ground]=uM[bridge]="blank.png";

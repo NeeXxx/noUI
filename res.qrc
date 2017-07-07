@@ -18,5 +18,6 @@
         <file>images/flame_left.png</file>
         <file>images/flame_right.png</file>
         <file>images/flame_up.png</file>
+        <file>images/flame.png</file>
     </qresource>
 </RCC>
