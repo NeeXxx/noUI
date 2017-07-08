@@ -19,7 +19,6 @@ bool board::tryMoveDown(player& p)
 bool board::tryMoveLeft(player& p)
 {
     int x=p.getX(),y=p.getY();
-    //qDebug()<<x<<" "<<y<<endl;
     bool flag=tryMove(x,y,x,y-1);
     if(flag) p.move(0,-1);
     return flag;
@@ -32,8 +31,6 @@ bool board::tryMoveRight(player& p)
     if(flag) p.move(0,1);
     return flag;
 }
-
-#define ANGRY(x) qDebug()<<#x"angry!"<<endl;
 
 bool board::tryMove(int x1,int y1,int x2,int y2) //from 1 to 2
 {

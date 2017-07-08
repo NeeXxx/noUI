@@ -15,8 +15,7 @@ void board::setBomb(player& p)
     bombQueue.push(bomb(x,y,p.getBombPower(),cnt,&p));
 }//绘图是个问题
 
-int dx[4]={ -1, 1,  0, 0},
-    dy[4]={  0, 0, -1, 1};
+
 
 void board::setFlame(bomb b,direction dir)
 {
@@ -26,8 +25,8 @@ void board::setFlame(bomb b,direction dir)
     for(int i=0,tx=x,ty=y;m.blockAt(tx,ty).canExplode() && (i<=power);i++)
     {
         m.blockAt(tx,ty).explode(dir);
-        tx+=dx[dir],ty+=dy[dir];
         tryTrapPlayer(tx,ty);
+        tx+=dx[dir],ty+=dy[dir];
     }
 }
 

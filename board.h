@@ -5,6 +5,7 @@
 #include "player.h"
 #include "block.h"
 #include "bomb.h"
+#include "direction.h"
 #include <QtWidgets>
 #include <QBasicTimer>
 #include <QFrame>
@@ -47,7 +48,8 @@ private:
 
     bool tryMove(int x1,int y1,int x2,int y2);
 
-    void explode(class bomb);
+    void setFlame(bomb,direction);
+    void explode(bomb);
 
     bool inMap(int x,int y);
 
