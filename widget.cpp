@@ -11,7 +11,8 @@ Widget::Widget(QWidget *parent)
     p.setBrush(this->backgroundRole(),QBrush(QColor(255,255,255)));
     this->setPalette(p);
     this->setAutoFillBackground(true);
-    resize(1200,800);
+    this->setMinimumSize(1200,780);
+    this->setMaximumSize(1200,780);
 }
 
 Widget::~Widget()
