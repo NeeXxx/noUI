@@ -58,8 +58,6 @@ bool block::canExplode()
     return true;
 }
 
-const above arrows[4]={aArrowUp,aArrowDown,aArrowLeft,aArrowRight};
-
 void block::explode(direction dir)
 {
     destroyAbove();
