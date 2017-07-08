@@ -4,7 +4,7 @@ void board::paintEvent(QPaintEvent*)
 {
     //绘制地图底板
     QPainter painter(this);
-    painter.translate(0,20);
+    painter.translate(0,16);
     QPixmap tground;
     tground.load(":/images/images/ground.png");
     painter.drawPixmap(0,0,720,720,tground);
