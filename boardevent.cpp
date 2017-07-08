@@ -101,7 +101,7 @@ void board::timerEvent(QTimerEvent* event)
         {
             explode(bombQueue.front());
             bombQueue.pop();
-        }
+        }//*/
         repaint();
         m.cleanFlames();
     }

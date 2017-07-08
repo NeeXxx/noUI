@@ -19,6 +19,7 @@ board::board(QWidget* parent):QFrame(parent),p1(1,1),p2(3,8)
 
     initPlayer1();
     initPlayer2();
+
 }
 
 QSize board::sizeHint() const

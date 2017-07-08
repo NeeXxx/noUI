@@ -32,7 +32,6 @@ public:
     void keyPressEvent(QKeyEvent* event) Q_DECL_OVERRIDE;
 
 private:
-
     myMap m;
     std::queue<bomb> bombQueue;
 
@@ -48,8 +47,7 @@ private:
 
     bool tryMove(int x1,int y1,int x2,int y2);
 
-    void setFlame(bomb,direction);
-    void explode(bomb);
+    void setFlame(bomb&,direction);
 
     bool inMap(int x,int y);
 
@@ -57,8 +55,10 @@ private:
     void initPlayer2();
 
     void trapPlayer(player&);
-
     void tryTrapPlayer(int,int);
+
+private slots:
+    void explode(bomb&);
 
 protected:
     void paintEvent(QPaintEvent*) override;
