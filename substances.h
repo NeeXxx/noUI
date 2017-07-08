@@ -6,7 +6,8 @@ enum aboveSubstance{sBomb,arrowUp,arrowDown,arrowLeft,arrowRight,
                     player1,player2,
                     wood,air,
                     bubble,shoe,drug,
-                    p1ob,p2ob};
+                    p1ob,p2ob,
+                    flame};
 
 //希望底部的东西是不可改变的
 class under
@@ -62,13 +63,15 @@ const above aBomb(sBomb,false,false),//不可推
             aShoe(shoe,true,false),
             aDrug(drug,true,false),
             aP1ob(p1ob,true,false),
-            aP2ob(p2ob,true,false);//可进入
+            aP2ob(p2ob,true,false),
+            aFlame(flame,true,false);//可进入
 
-const above aArray[14]={aBomb,aArrowUp,aArrowDown,aArrowLeft,aArrowRight,
+const above aArray[15]={aBomb,aArrowUp,aArrowDown,aArrowLeft,aArrowRight,
                     aPlayer1,aPlayer2,
                     aWood,aAir,
                     aBubble,aShoe,aDrug,
-                    aP1ob,aP2ob};
+                    aP1ob,aP2ob,
+                    aFlame};
 
 class substance
 {
