@@ -4,7 +4,7 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
     b=new  board;
-    QHBoxLayout* layout=new QHBoxLayout;
+    QVBoxLayout* layout=new QVBoxLayout;
     layout->addWidget(b);
     setLayout(layout);
     QPalette p;
