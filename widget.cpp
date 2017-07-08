@@ -7,7 +7,10 @@ Widget::Widget(QWidget *parent)
     QHBoxLayout* layout=new QHBoxLayout;
     layout->addWidget(b);
     setLayout(layout);
-
+    QPalette p;
+    p.setBrush(this->backgroundRole(),QBrush(QColor(255,255,255)));
+    this->setPalette(p);
+    this->setAutoFillBackground(true);
     resize(1200,800);
 }
 
