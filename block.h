@@ -3,17 +3,21 @@
 
 #include "substances.h"
 #include "direction.h"
+#include "bomb.h"
 
 class block
 {
     under u;
     above a;
     above middle; //用来表示人和炸弹在同一块的情况
+public:
+    bomb* theBomb;
+
     //friend void myMap::intToBlock();
 public:
-    block(under tu,above ta):u(tu),a(ta),middle(aAir) {}
-    block(under tu):u(tu),a(aAir),middle(aAir) {}
-    block():u(uWater),a(aAir),middle(aAir) {}
+    block(under tu,above ta):u(tu),a(ta),middle(aAir),theBomb(NULL) {}
+    block(under tu):u(tu),a(aAir),middle(aAir),theBomb(NULL) {}
+    block():u(uWater),a(aAir),middle(aAir),theBomb(NULL) {}
 
     void destroyAbove();
     void addAbove(above ta);
@@ -27,8 +31,8 @@ public:
     bool hidable();
     bool haveAbove();
 
-    bool canExplode();
-    void explode(direction);
+    bool canBeExploded();
+    void beExploded(direction);
 
     substance appearance(); //画图必须调用appearance
 

@@ -51,14 +51,14 @@ substance block::appearance()
         return substance(u.substance(),a.substance());
 }
 
-bool block::canExplode()
+bool block::canBeExploded()
 {
     if((u==uHouse) || (u==uWater))
         return false;
     return true;
 }
 
-void block::explode(direction dir)
+void block::beExploded(direction dir)
 {
     destroyAbove();
     addAbove(arrows[dir]);
