@@ -7,7 +7,7 @@ void board::paintEvent(QPaintEvent*)
     painter.translate(0,20);
     QPixmap tground;
     tground.load(":/images/images/ground.png");
-    painter.drawPixmap(0,0,900,900,tground);
+    painter.drawPixmap(0,0,720,720,tground);
     //绘制前的定义
     std::map<aboveSubstance,QString> aM;
     std::map<underSubstance,QString> uM;
@@ -44,7 +44,7 @@ void board::paintEvent(QPaintEvent*)
             }
             full_name=":/images/images/"+name;
             pix.load(full_name);
-            painter.drawPixmap(100*i-100,100*j-120,100,120,pix);
+            painter.drawPixmap(80*i-80,80*j-96,80,96,pix);
         }
     }
 }

@@ -15,7 +15,7 @@ board::board(QWidget* parent):QFrame(parent),p1(1,1),p2(3,8)
     setFocusPolicy(Qt::StrongFocus);
     cnt=0;
     timer.start(200,this);
-    resize(1000,1000);
+    resize(720,720);
 
     initPlayer1();
     initPlayer2();
@@ -23,12 +23,12 @@ board::board(QWidget* parent):QFrame(parent),p1(1,1),p2(3,8)
 
 QSize board::sizeHint() const
 {
-    return QSize(1000,1000);
+    return QSize(720,720);
 }
 
 QSize board::minimumSizeHint() const
 {
-    return QSize(1000,1000);
+    return QSize(720,720);
 }
 
 void board::initPlayer1()

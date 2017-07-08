@@ -8,7 +8,7 @@ Widget::Widget(QWidget *parent)
     layout->addWidget(b);
     setLayout(layout);
 
-    resize(900,900);
+    resize(1200,800);
 }
 
 Widget::~Widget()
