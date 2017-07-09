@@ -34,7 +34,8 @@ SOURCES += \
     myMap.cpp \
     player.cpp \
     boardbomb.cpp \
-    boardplayer.cpp
+    boardplayer.cpp \
+    rightpanel.cpp
 
 HEADERS += \
         widget.h \
@@ -44,7 +45,8 @@ HEADERS += \
     myMap.h \
     player.h \
     substances.h \
-    direction.h
+    direction.h \
+    rightpanel.h
 
 RESOURCES += \
     res.qrc
