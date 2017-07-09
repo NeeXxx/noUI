@@ -1,14 +1,15 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <QDebug>
-
+#include "substances.h"
 
 class player
 {
 public:
-    player();
-    player(int,int);
+    //player();
+    player(int,int,above);
+
+    above onBomb;
 
     int getSpeed() const { return speed; }
     void setSpeed(int t) { speed=t; }

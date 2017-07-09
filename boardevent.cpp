@@ -68,7 +68,7 @@ void board::keyPressEvent(QKeyEvent* event)
     case Qt::Key_D:
         tryMoveRight(p1);
         break;
-    case Qt::Key_F:
+    case Qt::Key_J:
         trySetBomb(p1);
         break;
 
@@ -85,7 +85,7 @@ void board::keyPressEvent(QKeyEvent* event)
     case Qt::Key_Right:
         flag=tryMoveRight(p2);
         break;
-    case Qt::Key_Shift:
+    case Qt::Key_Space:
         trySetBomb(p2);
         break;
     }
@@ -97,11 +97,6 @@ void board::timerEvent(QTimerEvent* event)
     if(event->timerId()==timer.timerId())
     {
         cnt++;
-        while(!bombQueue.empty() && bombQueue.front().canExplode(cnt))
-        {
-            explode(bombQueue.front());
-            bombQueue.pop();
-        }//*/
         repaint();
         m.cleanFlames();
     }

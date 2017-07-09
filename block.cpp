@@ -10,12 +10,18 @@ void block::addAbove(above ta)
     a=ta;
 }
 
+void block::theBombExplode()
+{
+    delete theBomb;
+}
+
 bool block::haveFlame()
 {
     return a==aArrowDown ||
            a==aArrowLeft ||
            a==aArrowRight ||
-           a==aArrowUp;
+           a==aArrowUp ||
+           a==aFlame;
 }
 
 void block::setUnder(under tu)
@@ -45,21 +51,58 @@ bool block::haveAbove()
 
 substance block::appearance()
 {
+    checkBomb(); //先检测比较稳妥
     if(hidable())
         return substance(u.substance(),air);
     else
-        return substance(u.substance(),a.substance());
+    {
+        if(middlePlayerOnBomb())
+            return substance(u.substance(),middle.substance());
+        else
+            return substance(u.substance(),a.substance());
+    }
 }
 
-bool block::canExplode()
+bool block::canBeExploded()
 {
     if((u==uHouse) || (u==uWater))
         return false;
     return true;
 }
 
-void block::explode(direction dir)
+void block::beExploded(direction dir)
 {
     destroyAbove();
     addAbove(arrows[dir]);
+    if(haveBomb())
+        theBomb->explode(*theBomb);
+}
+
+void block::addBomb(player& p)
+{
+    middle=p.onBomb;
+}
+
+bool block::haveBomb()
+{
+    return theBomb!=NULL;
+}
+
+bool block::middlePlayerOnBomb()
+{
+    return middle==aP1ob || middle==aP2ob;
+}
+
+void block::checkBomb()
+{
+    if(middlePlayerOnBomb() && a==aAir) //表明人已经走了，此地只剩下bomb
+    {
+        middle=aAir;
+        a=aBomb;
+    }
+}
+
+bool block::havePlayer()
+{
+    return a==aPlayer1 || a==aPlayer2;
 }

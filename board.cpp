@@ -7,7 +7,7 @@
 #include <string>
 using namespace  std;
 
-board::board(QWidget* parent):QFrame(parent),p1(1,1),p2(3,8)
+board::board(QWidget* parent):QFrame(parent),p1(1,1,aP1ob),p2(9,9,aP2ob)
 {
     //merge
     //qDebug()<<"angry"<<endl;
@@ -53,11 +53,6 @@ void board::countMapForDraw()
         for(int j=1;j<=10;j++)
         {
             block& temp=m.blockAt(i,j);
-            if(temp.haveBomb() && temp.getAbove()==aAir)
-            {
-                temp.removeMiddle();
-                temp.addAbove(aBomb);
-            }
 
             if(i==x1 && j==y1) temp.addAbove(aPlayer1);
             if(i==x2 && j==y2) temp.addAbove(aPlayer2);

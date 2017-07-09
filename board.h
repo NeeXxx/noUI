@@ -2,19 +2,14 @@
 #define BOARD_H
 
 #include "myMap.h"
-#include "player.h"
-#include "block.h"
 #include "bomb.h"
-#include "direction.h"
-#include <QtWidgets>
-#include <QBasicTimer>
 #include <QFrame>
 #include <QPointer>
 #include <queue>
 
-
 class board:public QFrame
 {
+    Q_OBJECT
 public:
     board(QWidget* parent=0);
 
@@ -33,7 +28,6 @@ public:
 
 private:
     myMap m;
-    std::queue<bomb> bombQueue;
 
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
@@ -58,7 +52,7 @@ private:
     void tryTrapPlayer(int,int);
 
 private slots:
-    void explode(bomb&);
+    void exploded(bomb&);
 
 protected:
     void paintEvent(QPaintEvent*) override;

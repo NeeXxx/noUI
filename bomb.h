@@ -1,37 +1,35 @@
 #ifndef BOMB_H
 #define BOMB_H
 
-#include <QObject>
+#include <QtWidgets>
+#include <QFrame>
 #include <QBasicTimer>
+#include <QTimer>
 #include "player.h"
+#include "block.h"
 
-class bomb
+class bomb:public QFrame
 {
-    //Q_OBJECT
+    Q_OBJECT
 public:
-    bomb(int,int,int,int,player*);
-    //bomb(bomb&);
+    bomb(QFrame*,int,int,int,player*);
     int getPower() const { return power; }
-    bool canExplode(int);
     int getX() { return x; }
     int getY() { return y; }
     player* getSetter() { return setter; }//也可以用信号和槽来实现
-    //~bomb();
+    //block& getBlock();
 
-//public slots:
+signals:
     void explode(bomb&);
 
 private:
     int x,y;
     int power;
-    int setTime;
     player* setter;
-    //QBasicTimer timer;
-
-    const int explodeTime=15;
+    QBasicTimer timer;
 
 protected:
-    //void timerEvent(QTimerEvent*) override;
+    void timerEvent(QTimerEvent*) override;
 };
 
 #endif // BOMB_H

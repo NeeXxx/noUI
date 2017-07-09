@@ -3,17 +3,26 @@
 
 #include "substances.h"
 #include "direction.h"
+#include "bomb.h"
 
-class block
+class bomb;
+
+class block//:public QFrame
 {
+    //Q_OBJECT
     under u;
     above a;
     above middle; //用来表示人和炸弹在同一块的情况
-    //friend void myMap::intToBlock();
+    //bool havePlayer;
 public:
-    block(under tu,above ta):u(tu),a(ta),middle(aAir) {}
-    block(under tu):u(tu),a(aAir),middle(aAir) {}
-    block():u(uWater),a(aAir),middle(aAir) {}
+    bomb* theBomb;
+
+    void theBombExplode();
+
+public:
+    block(under tu,above ta):u(tu),a(ta),middle(aAir),theBomb(NULL) {}
+    block(under tu):u(tu),a(aAir),middle(aAir),theBomb(NULL) {}
+    block():u(uWater),a(aAir),middle(aAir),theBomb(NULL) {}
 
     void destroyAbove();
     void addAbove(above ta);
@@ -27,14 +36,17 @@ public:
     bool hidable();
     bool haveAbove();
 
-    bool canExplode();
-    void explode(direction);
+    bool canBeExploded();
+    void beExploded(direction);
 
     substance appearance(); //画图必须调用appearance
 
-    bool haveBomb() { return middle==aBomb; }
-    void addBomb() { middle=aBomb; }
-    void removeMiddle() { middle=aAir; }
+    bool havePlayer();
+
+    bool haveBomb();
+    void addBomb(player&);
+    void checkBomb();
+    bool middlePlayerOnBomb();
 };
 
 #endif // BLOCK_H
