@@ -20,7 +20,8 @@ bool block::haveFlame()
     return a==aArrowDown ||
            a==aArrowLeft ||
            a==aArrowRight ||
-           a==aArrowUp;
+           a==aArrowUp ||
+           a==aFlame;
 }
 
 void block::setUnder(under tu)

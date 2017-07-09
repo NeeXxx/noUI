@@ -37,4 +37,5 @@ void board::setFlame(bomb& b,direction dir)
         tryTrapPlayer(tx,ty);
         tx+=dx[dir],ty+=dy[dir];
     }
+    m.blockAt(x,y).addAbove(aFlame);
 }
