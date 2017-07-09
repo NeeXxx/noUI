@@ -4,11 +4,11 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
-    rightPanel *panel=new rightPanel;
+    //rightPanel *panel=new rightPanel;
     b=new  board;
     QHBoxLayout* layout=new QHBoxLayout;
     layout->addWidget(b);
-    layout->addWidget(panel);
+    //layout->addWidget(panel);
     setLayout(layout);
     QPalette p;
     p.setBrush(this->backgroundRole(),QBrush(QColor(255,255,255)));

@@ -24,12 +24,12 @@ board::board(QWidget* parent):QFrame(parent),p1(1,1,aP1ob),p2(9,9,aP2ob)
 
 QSize board::sizeHint() const
 {
-    return QSize(720,720);
+    return QSize(1200,720);
 }
 
 QSize board::minimumSizeHint() const
 {
-    return QSize(720,720);
+    return QSize(1200,720);
 }
 
 void board::initPlayer1()
