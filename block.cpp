@@ -73,6 +73,8 @@ void block::beExploded(direction dir)
 {
     destroyAbove();
     addAbove(arrows[dir]);
+    if(haveBomb())
+        theBomb->explode(*theBomb);
 }
 
 void block::addBomb(player& p)
