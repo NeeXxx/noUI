@@ -13,13 +13,16 @@ void board::setBomb(player& p)
     m.blockAt(x,y).addBomb();
     p.setBomb();
     m.blockAt(x,y).theBomb=new bomb(this,x,y,p.getBombPower(),&p);
-    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(bomb&)),this,SLOT(exploded(bomb&)));
-    //bombQueue.push(bomb(newBomb));
+    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(bomb&)),
+            this,SLOT(exploded(bomb&)));
+//    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(bomb&)),
+//            &m.blockAt(x,y),SLOT(baozha(bomb&)));
 }//绘图是个问题
 
 void board::exploded(bomb& b)
 {
     b.getSetter()->bombExplode();
+    m.blockAt(b.getX(),b.getY()).theBombExplode();
 
     for(int dir=dirUp;dir<=dirRight;dir++)
         setFlame(b,(direction)dir);

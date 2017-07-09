@@ -10,6 +10,11 @@ void block::addAbove(above ta)
     a=ta;
 }
 
+void block::theBombExplode()
+{
+    delete theBomb;
+}
+
 bool block::haveFlame()
 {
     return a==aArrowDown ||

@@ -5,15 +5,19 @@
 #include "direction.h"
 #include "bomb.h"
 
-class block
+class bomb;
+
+class block//:public QFrame
 {
+    //Q_OBJECT
     under u;
     above a;
     above middle; //用来表示人和炸弹在同一块的情况
 public:
     bomb* theBomb;
 
-    //friend void myMap::intToBlock();
+    void theBombExplode();
+
 public:
     block(under tu,above ta):u(tu),a(ta),middle(aAir),theBomb(NULL) {}
     block(under tu):u(tu),a(aAir),middle(aAir),theBomb(NULL) {}

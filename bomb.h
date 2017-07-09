@@ -6,6 +6,7 @@
 #include <QBasicTimer>
 #include <QTimer>
 #include "player.h"
+#include "block.h"
 
 class bomb:public QFrame
 {
@@ -16,6 +17,7 @@ public:
     int getX() { return x; }
     int getY() { return y; }
     player* getSetter() { return setter; }//也可以用信号和槽来实现
+    //block& getBlock();
 
 signals:
     void explode(bomb&);
