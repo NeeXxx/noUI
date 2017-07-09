@@ -10,13 +10,11 @@ void board::trySetBomb(player& p)
 void board::setBomb(player& p)
 {
     int x=p.getX(),y=p.getY();
-    m.blockAt(x,y).addBomb();
+    m.blockAt(x,y).addBomb(p);
     p.setBomb();
     m.blockAt(x,y).theBomb=new bomb(this,x,y,p.getBombPower(),&p);
     connect(m.blockAt(x,y).theBomb,SIGNAL(explode(bomb&)),
             this,SLOT(exploded(bomb&)));
-//    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(bomb&)),
-//            &m.blockAt(x,y),SLOT(baozha(bomb&)));
 }//绘图是个问题
 
 void board::exploded(bomb& b)

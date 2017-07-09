@@ -13,6 +13,7 @@ class block//:public QFrame
     under u;
     above a;
     above middle; //用来表示人和炸弹在同一块的情况
+    //bool havePlayer;
 public:
     bomb* theBomb;
 
@@ -40,9 +41,9 @@ public:
 
     substance appearance(); //画图必须调用appearance
 
-    bool haveBomb() { return middle==aBomb; }
-    void addBomb() { middle=aBomb; }
-    void removeMiddle() { middle=aAir; }
+    bool haveBomb();
+    void addBomb(player&);
+    void checkBomb();
 };
 
 #endif // BLOCK_H

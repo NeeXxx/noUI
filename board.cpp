@@ -53,11 +53,7 @@ void board::countMapForDraw()
         for(int j=1;j<=10;j++)
         {
             block& temp=m.blockAt(i,j);
-            if(temp.haveBomb() && temp.getAbove()==aAir)
-            {
-                temp.removeMiddle();
-                temp.addAbove(aBomb);
-            }
+            temp.checkBomb();
 
             if(i==x1 && j==y1) temp.addAbove(aPlayer1);
             if(i==x2 && j==y2) temp.addAbove(aPlayer2);

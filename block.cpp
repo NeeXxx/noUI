@@ -53,7 +53,12 @@ substance block::appearance()
     if(hidable())
         return substance(u.substance(),air);
     else
-        return substance(u.substance(),a.substance());
+    {
+        if(middle==aP1ob)
+            return substance(u.substance(),middle.substance());
+        else
+            return substance(u.substance(),a.substance());
+    }
 }
 
 bool block::canBeExploded()
@@ -67,4 +72,23 @@ void block::beExploded(direction dir)
 {
     destroyAbove();
     addAbove(arrows[dir]);
+}
+
+void block::addBomb(player& p)
+{
+    middle=aP1ob;
+}
+
+bool block::haveBomb()
+{
+    return theBomb!=NULL;
+}
+
+void block::checkBomb()
+{
+    if(middle==aP1ob && a==aAir)
+    {
+        middle=aAir;
+        a=aBomb;
+    }
 }
