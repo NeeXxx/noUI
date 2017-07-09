@@ -3,7 +3,7 @@
 bomb::bomb(QFrame* parent,int tx,int ty,int tp,player* str):
     QFrame(parent),x(tx),y(ty),power(tp),setter(str)
 {
-    timer.start(3000,this);
+    timer.start(1500,this);
 }
 
 void bomb::timerEvent(QTimerEvent* event)

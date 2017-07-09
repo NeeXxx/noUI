@@ -51,6 +51,7 @@ bool block::haveAbove()
 
 substance block::appearance()
 {
+    checkBomb(); //先检测比较稳妥
     if(hidable())
         return substance(u.substance(),air);
     else
@@ -94,9 +95,14 @@ bool block::middlePlayerOnBomb()
 
 void block::checkBomb()
 {
-    if( middlePlayerOnBomb() && a==aAir)
+    if(middlePlayerOnBomb() && a==aAir) //表明人已经走了，此地只剩下bomb
     {
         middle=aAir;
         a=aBomb;
     }
+}
+
+bool block::havePlayer()
+{
+    return a==aPlayer1 || a==aPlayer2;
 }

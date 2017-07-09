@@ -41,6 +41,8 @@ public:
 
     substance appearance(); //画图必须调用appearance
 
+    bool havePlayer();
+
     bool haveBomb();
     void addBomb(player&);
     void checkBomb();
