@@ -7,7 +7,7 @@
 #include <string>
 using namespace  std;
 
-board::board(QWidget* parent):QFrame(parent),p1(1,1),p2(3,8)
+board::board(QWidget* parent):QFrame(parent),p1(1,1,aP1ob),p2(3,8,aP2ob)
 {
     //merge
     //qDebug()<<"angry"<<endl;

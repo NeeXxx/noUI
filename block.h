@@ -44,6 +44,7 @@ public:
     bool haveBomb();
     void addBomb(player&);
     void checkBomb();
+    bool middlePlayerOnBomb();
 };
 
 #endif // BLOCK_H

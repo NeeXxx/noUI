@@ -55,7 +55,7 @@ substance block::appearance()
         return substance(u.substance(),air);
     else
     {
-        if(middle==aP1ob)
+        if(middlePlayerOnBomb())
             return substance(u.substance(),middle.substance());
         else
             return substance(u.substance(),a.substance());
@@ -79,7 +79,7 @@ void block::beExploded(direction dir)
 
 void block::addBomb(player& p)
 {
-    middle=aP1ob;
+    middle=p.onBomb;
 }
 
 bool block::haveBomb()
@@ -87,9 +87,14 @@ bool block::haveBomb()
     return theBomb!=NULL;
 }
 
+bool block::middlePlayerOnBomb()
+{
+    return middle==aP1ob || middle==aP2ob;
+}
+
 void block::checkBomb()
 {
-    if(middle==aP1ob && a==aAir)
+    if( middlePlayerOnBomb() && a==aAir)
     {
         middle=aAir;
         a=aBomb;
