@@ -35,5 +35,5 @@ bool player::canSetBomb()
 
 void player::beTrapped()
 {
-    x=0,y=0;
+    //x=0,y=0;
 }

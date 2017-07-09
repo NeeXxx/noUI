@@ -13,4 +13,3 @@ void bomb::timerEvent(QTimerEvent* event)
         emit explode(*this);
     }
 }
-
