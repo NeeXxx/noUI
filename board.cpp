@@ -15,7 +15,7 @@ board::board(QWidget* parent):QFrame(parent),p1(1,1,aP1ob),p2(9,9,aP2ob)
     setFocusPolicy(Qt::StrongFocus);
     cnt=0;
     timer.start(200,this);
-    resize(720,720);
+    resize(1200,720);
 
     initPlayer1();
     initPlayer2();
