@@ -13,6 +13,7 @@ void bomb::timerEvent(QTimerEvent* event)
         tryExplode();
     }
 }
+<<<<<<< HEAD
 
 
 void bomb::setExploded()
@@ -25,3 +26,5 @@ void bomb::tryExplode()
     if(!exploded)
         emit explode(*this);
 }
+=======
+>>>>>>> b983aedae3197ff03680f7cf948d84e1d4a2fcfc
