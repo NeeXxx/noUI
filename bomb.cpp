@@ -10,7 +10,18 @@ void bomb::timerEvent(QTimerEvent* event)
 {
     if(event->timerId()==timer.timerId())
     {
-        emit explode(*this);
+        tryExplode();
     }
 }
 
+
+void bomb::setExploded()
+{
+    exploded==true;
+}
+
+void bomb::tryExplode()
+{
+    if(!exploded)
+        emit explode(*this);
+}

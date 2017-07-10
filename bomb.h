@@ -14,19 +14,26 @@ class bomb:public QFrame
 public:
     bomb(QFrame*,int,int,int,player*);
     int getPower() const { return power; }
-    int getX() { return x; }
-    int getY() { return y; }
-    player* getSetter() { return setter; }//也可以用信号和槽来实现
+    int getX() const { return x; }
+    int getY() const { return y; }
+    player* getSetter() const { return setter; }//也可以用信号和槽来实现
     //block& getBlock();
+    ~bomb() {}
+    void tryExplode(); //可以返回bool
 
 signals:
-    void explode(bomb&);
+    void explode(const bomb&);
+
+public slots:
+    void setExploded();
 
 private:
     int x,y;
     int power;
     player* setter;
     QBasicTimer timer;
+
+    bool exploded;
 
 protected:
     void timerEvent(QTimerEvent*) override;

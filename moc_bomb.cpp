@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_bomb_t {
-    QByteArrayData data[4];
-    char stringdata0[20];
+    QByteArrayData data[3];
+    char stringdata0[14];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,10 @@ static const qt_meta_stringdata_bomb_t qt_meta_stringdata_bomb = {
     {
 QT_MOC_LITERAL(0, 0, 4), // "bomb"
 QT_MOC_LITERAL(1, 5, 7), // "explode"
-QT_MOC_LITERAL(2, 13, 0), // ""
-QT_MOC_LITERAL(3, 14, 5) // "bomb&"
+QT_MOC_LITERAL(2, 13, 0) // ""
 
     },
-    "bomb\0explode\0\0bomb&"
+    "bomb\0explode\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,7 +57,7 @@ static const uint qt_meta_data_bomb[] = {
        1,    1,   19,    2, 0x06 /* Public */,
 
  // signals: parameters
-    QMetaType::Void, 0x80000000 | 3,    2,
+    QMetaType::Void, 0x80000000 | 0,    2,
 
        0        // eod
 };
@@ -69,14 +68,14 @@ void bomb::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         bomb *_t = static_cast<bomb *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->explode((*reinterpret_cast< bomb(*)>(_a[1]))); break;
+        case 0: _t->explode((*reinterpret_cast< const bomb(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (bomb::*_t)(bomb & );
+            typedef void (bomb::*_t)(const bomb & );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&bomb::explode)) {
                 *result = 0;
                 return;
@@ -122,7 +121,7 @@ int bomb::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void bomb::explode(bomb & _t1)
+void bomb::explode(const bomb & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

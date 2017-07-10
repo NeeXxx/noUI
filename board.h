@@ -41,7 +41,7 @@ private:
 
     bool tryMove(int x1,int y1,int x2,int y2);
 
-    void setFlame(bomb&,direction);
+    void setFlame(const bomb&,direction);
 
     bool inMap(int x,int y);
 
@@ -52,7 +52,7 @@ private:
     void tryTrapPlayer(int,int);
 
 private slots:
-    void exploded(bomb&);
+    void exploded(const bomb&);
 
 protected:
     void paintEvent(QPaintEvent*) override;
