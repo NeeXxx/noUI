@@ -12,8 +12,7 @@ void block::addAbove(above ta)
 
 void block::theBombExplode()
 {
-    static int cnt=0;
-    qDebug()<<cnt++<<endl;
+    delete theBomb;
     theBomb=NULL;
 }
 
