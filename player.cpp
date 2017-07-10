@@ -23,8 +23,11 @@ void player::setBomb()
     bombLeft--;
 }
 
-void player::bombExplode()
+#include <QDebug>
+
+void player::bombExplode(const bomb&)
 {
+    qDebug()<<"angry!"<<endl;
     bombLeft++;
 }
 

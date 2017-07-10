@@ -1,10 +1,15 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include <QFrame>
 #include "substances.h"
+#include "bomb.h"
 
-class player
+class bomb;
+
+class player:public QFrame
 {
+    Q_OBJECT
 public:
     //player();
     player(int,int,above);
@@ -21,7 +26,8 @@ public:
     void move(int dx,int dy) { x+=dx; y+=dy; }
 
     void setBomb();
-    void bombExplode();
+public slots:
+    void bombExplode(const bomb&);
 
     bool canSetBomb();
 

@@ -66,6 +66,7 @@ SOURCES       = main.cpp \
 		moc_widget.cpp \
 		moc_board.cpp \
 		moc_bomb.cpp \
+		moc_player.cpp \
 		moc_rightpanel.cpp
 OBJECTS       = main.o \
 		widget.o \
@@ -83,6 +84,7 @@ OBJECTS       = main.o \
 		moc_widget.o \
 		moc_board.o \
 		moc_bomb.o \
+		moc_player.o \
 		moc_rightpanel.o
 DIST          = ../../../Qt/5.9/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9/clang_64/mkspecs/qdevice.pri \
@@ -775,9 +777,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/5.9/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/usr/bin/g++ -pipe -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.10 -Wall -W -dM -E -o moc_predefs.h ../../../Qt/5.9/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_widget.cpp moc_board.cpp moc_bomb.cpp moc_rightpanel.cpp
+compiler_moc_header_make_all: moc_widget.cpp moc_board.cpp moc_bomb.cpp moc_player.cpp moc_rightpanel.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_widget.cpp moc_board.cpp moc_bomb.cpp moc_rightpanel.cpp
+	-$(DEL_FILE) moc_widget.cpp moc_board.cpp moc_bomb.cpp moc_player.cpp moc_rightpanel.cpp
 moc_widget.cpp: ../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		board.h \
@@ -1217,6 +1219,14 @@ moc_bomb.cpp: ../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QtWidgets
 		moc_predefs.h \
 		../../../Qt/5.9/clang_64/bin/moc
 	/Users/jinpengxiang/Qt/5.9/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/jinpengxiang/Qt/5.9/clang_64/mkspecs/macx-g++ -I/Users/jinpengxiang/Documents/GitHub/noUI -I/Users/jinpengxiang/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers -I/Users/jinpengxiang/Qt/5.9/clang_64/lib/QtGui.framework/Headers -I/Users/jinpengxiang/Qt/5.9/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/jinpengxiang/Qt/5.9/clang_64/lib bomb.h -o moc_bomb.cpp
+
+moc_player.cpp: substances.h \
+		../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QFrame \
+		../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qframe.h \
+		player.h \
+		moc_predefs.h \
+		../../../Qt/5.9/clang_64/bin/moc
+	/Users/jinpengxiang/Qt/5.9/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/jinpengxiang/Qt/5.9/clang_64/mkspecs/macx-g++ -I/Users/jinpengxiang/Documents/GitHub/noUI -I/Users/jinpengxiang/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers -I/Users/jinpengxiang/Qt/5.9/clang_64/lib/QtGui.framework/Headers -I/Users/jinpengxiang/Qt/5.9/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/jinpengxiang/Qt/5.9/clang_64/lib player.h -o moc_player.cpp
 
 moc_rightpanel.cpp: ../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -2405,7 +2415,9 @@ myMap.o: myMap.cpp myMap.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o myMap.o myMap.cpp
 
 player.o: player.cpp player.h \
-		substances.h
+		substances.h \
+		../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QFrame \
+		../../../Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qframe.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o player.cpp
 
 boardbomb.o: boardbomb.cpp board.h \
@@ -2716,6 +2728,9 @@ moc_board.o: moc_board.cpp
 
 moc_bomb.o: moc_bomb.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_bomb.o moc_bomb.cpp
+
+moc_player.o: moc_player.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_player.o moc_player.cpp
 
 moc_rightpanel.o: moc_rightpanel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_rightpanel.o moc_rightpanel.cpp

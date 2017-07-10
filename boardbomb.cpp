@@ -14,12 +14,14 @@ void board::setBomb(player& p)
     p.setBomb();
     m.blockAt(x,y).theBomb=new bomb(this,x,y,p.getBombPower(),&p);
     connect(m.blockAt(x,y).theBomb,SIGNAL(explode(const bomb&)),
+            &p,SLOT(bombExplode(const bomb&)));
+    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(const bomb&)),
             this,SLOT(exploded(const bomb&)));
 }//绘图是个问题
 
 void board::exploded(const bomb& b)
 {
-    b.getSetter()->bombExplode();
+    //b.getSetter()->bombExplode();
 
     for(int dir=dirUp;dir<=dirRight;dir++)
         setFlame(b,(direction)dir);

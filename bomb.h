@@ -8,6 +8,8 @@
 #include "player.h"
 #include "block.h"
 
+class player;
+
 class bomb:public QFrame
 {
     Q_OBJECT

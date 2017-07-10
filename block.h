@@ -6,6 +6,7 @@
 #include "bomb.h"
 
 class bomb;
+class player;
 
 class block//:public QFrame
 {
