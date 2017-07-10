@@ -18,7 +18,7 @@ public:
     int getY() const { return y; }
     player* getSetter() const { return setter; }//也可以用信号和槽来实现
     //block& getBlock();
-    ~bomb() {}
+    //~bomb() {}
     void tryExplode(); //可以返回bool
 
 signals:
