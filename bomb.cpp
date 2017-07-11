@@ -4,6 +4,7 @@ bomb::bomb(QFrame* parent,int tx,int ty,int tp,player* str):
     QFrame(parent),x(tx),y(ty),power(tp),setter(str)
 {
     timer.start(1500,this);
+    exploded=false;
 }
 
 void bomb::timerEvent(QTimerEvent* event)
@@ -18,16 +19,19 @@ void bomb::timerEvent(QTimerEvent* event)
 
 void bomb::setExploded()
 {
+    qDebug()<<"besile"<<endl;
     exploded=true;
 }
 
 void bomb::tryExplode()
 {
+    qDebug()<<"BE"<<endl;
     if(!exploded)
     {
+        qDebug()<<"angry"<<endl;
+        setExploded();
         emit explode(*this);
     }
-    setExploded();
 }
 //=======
 //>>>>>>> b983aedae3197ff03680f7cf948d84e1d4a2fcfc

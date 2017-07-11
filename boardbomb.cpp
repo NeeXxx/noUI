@@ -21,8 +21,6 @@ void board::setBomb(player& p)
 
 void board::exploded(const bomb& b)
 {
-    //b.getSetter()->bombExplode();
-
     for(int dir=dirUp;dir<=dirRight;dir++)
         setFlame(b,(direction)dir);
     m.blockAt(b.getX(),b.getY()).theBombExplode();

@@ -12,7 +12,7 @@ class player:public QFrame
     Q_OBJECT
 public:
     //player();
-    player(int,int,above);
+    player(QFrame*,int,int,above);
 
     above onBomb;
 
@@ -26,6 +26,8 @@ public:
     void move(int dx,int dy) { x+=dx; y+=dy; }
 
     void setBomb();
+
+    //~player();
 public slots:
     void bombExplode(const bomb&);
 
@@ -39,7 +41,11 @@ private:
     int bombNum; //总共能放多少个炸弹
     int bombLeft; //还能放多少个炸弹
     int x,y;
+    QBasicTimer timer;
 
+protected:
+    void paintEvent(QPaintEvent*);
+    void timerEvent(QTimerEvent*);
 };
 
 #endif // PLAYER_H
