@@ -27,6 +27,11 @@ public:
 
     void setBomb();
 
+    bool operator==(const player& right) const
+    {
+        return onBomb==right.onBomb;
+    }
+
     //~player();
 public slots:
     void bombExplode(const bomb&);

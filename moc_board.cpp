@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_board_t {
-    QByteArrayData data[7];
-    char stringdata0[50];
+    QByteArrayData data[8];
+    char stringdata0[52];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,11 +37,12 @@ QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 7), // "player&"
 QT_MOC_LITERAL(4, 32, 8), // "exploded"
 QT_MOC_LITERAL(5, 41, 4), // "bomb"
-QT_MOC_LITERAL(6, 46, 3) // "end"
+QT_MOC_LITERAL(6, 46, 3), // "end"
+QT_MOC_LITERAL(7, 50, 1) // "p"
 
     },
     "board\0signalTrapPlayer\0\0player&\0"
-    "exploded\0bomb\0end"
+    "exploded\0bomb\0end\0p"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,7 +71,7 @@ static const uint qt_meta_data_board[] = {
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 5,    2,
-    QMetaType::Void, 0x80000000 | 3,    2,
+    QMetaType::Void, 0x80000000 | 3,    7,
 
        0        // eod
 };

@@ -42,7 +42,7 @@ public:
     bool pushable() { return canBePush; }
     bool inable() { return canBeIn; }
     aboveSubstance substance() { return s; }
-    bool operator== (const above right)
+    bool operator== (const above& right) const
     {
         return s==right.s &&
                 canBeIn==right.canBeIn &&

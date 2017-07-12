@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'rightpanel.h'
+** Meta object code from reading C++ file 'gameover.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.9.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "rightpanel.h"
+#include "gameover.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'rightpanel.h' doesn't include <QObject>."
+#error "The header file 'gameover.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.9.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -20,25 +20,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_rightPanel_t {
+struct qt_meta_stringdata_gameOver_t {
     QByteArrayData data[1];
-    char stringdata0[11];
+    char stringdata0[9];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_rightPanel_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_gameOver_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_rightPanel_t qt_meta_stringdata_rightPanel = {
+static const qt_meta_stringdata_gameOver_t qt_meta_stringdata_gameOver = {
     {
-QT_MOC_LITERAL(0, 0, 10) // "rightPanel"
+QT_MOC_LITERAL(0, 0, 8) // "gameOver"
 
     },
-    "rightPanel"
+    "gameOver"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_rightPanel[] = {
+static const uint qt_meta_data_gameOver[] = {
 
  // content:
        7,       // revision
@@ -54,7 +54,7 @@ static const uint qt_meta_data_rightPanel[] = {
        0        // eod
 };
 
-void rightPanel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void gameOver::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -62,28 +62,28 @@ void rightPanel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     Q_UNUSED(_a);
 }
 
-const QMetaObject rightPanel::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_rightPanel.data,
-      qt_meta_data_rightPanel,  qt_static_metacall, nullptr, nullptr}
+const QMetaObject gameOver::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_gameOver.data,
+      qt_meta_data_gameOver,  qt_static_metacall, nullptr, nullptr}
 };
 
 
-const QMetaObject *rightPanel::metaObject() const
+const QMetaObject *gameOver::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *rightPanel::qt_metacast(const char *_clname)
+void *gameOver::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_rightPanel.stringdata0))
-        return static_cast<void*>(const_cast< rightPanel*>(this));
-    return QWidget::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_gameOver.stringdata0))
+        return static_cast<void*>(const_cast< gameOver*>(this));
+    return QDialog::qt_metacast(_clname);
 }
 
-int rightPanel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int gameOver::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP
