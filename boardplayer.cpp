@@ -8,12 +8,12 @@ void board::tryTrapPlayer(int tx,int ty)
     if(tx==x1 && ty==y1)
     {
         p1.beTrapped();
-        emit trapPlayer(p1);
+        emit signalTrapPlayer(p1);
     }
     if(tx==x2 && ty==y2)
     {
         p2.beTrapped();
-        emit trapPlayer(p2);
+        emit signalTrapPlayer(p2);
     }
 }
 

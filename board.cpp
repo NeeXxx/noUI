@@ -71,6 +71,7 @@ bool board::inMap(int x,int y)
 
 void board::end(player& p)
 {
+    qDebug()<<"angry"<<endl;
     if(p==p1) //p1输了
     {
 
