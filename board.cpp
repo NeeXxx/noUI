@@ -71,6 +71,14 @@ bool board::inMap(int x,int y)
 
 void board::end(player& p)
 {
+    if(p==p1) //p1输了
+    {
+
+    }
+    else //p2输了
+    {
+
+    }
     gameOver g;
     g.show();
 }
