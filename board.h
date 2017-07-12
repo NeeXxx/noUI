@@ -6,7 +6,7 @@
 #include <QFrame>
 #include <QPointer>
 #include <queue>
-
+//extern myMap m;
 class board:public QFrame
 {
     Q_OBJECT
@@ -27,7 +27,7 @@ public:
     void keyPressEvent(QKeyEvent* event) Q_DECL_OVERRIDE;
 
 private:
-    myMap m;
+    //myMap m;
 
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
@@ -52,11 +52,11 @@ private:
     void tryTrapPlayer(int,int);
 
 signals:
-    void trapPlayer(player&);
+    //void trapPlayer(player&);
 
 private slots:
     void exploded(const bomb&);
-    void end(player&);
+    //void end(player&);
 
 protected:
     void paintEvent(QPaintEvent*) override;
