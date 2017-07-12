@@ -37,13 +37,13 @@ QSize board::minimumSizeHint() const
 void board::initPlayer1()
 {
     int x=p1.getX(),y=p1.getY();
-    m.blockAt(x,y).addAbove(aPlayer1);
+    myMap::getTheMap().blockAt(x,y).addAbove(aPlayer1);
 }
 
 void board::initPlayer2()
 {
     int x=p2.getX(),y=p2.getY();
-    m.blockAt(x,y).addAbove(aPlayer2);
+    myMap::getTheMap().blockAt(x,y).addAbove(aPlayer2);
 }
 
 void board::countMapForDraw()
@@ -54,7 +54,7 @@ void board::countMapForDraw()
     for(int i=1;i<=10;i++)
         for(int j=1;j<=10;j++)
         {
-            block& temp=m.blockAt(i,j);
+            block& temp=myMap::getTheMap().blockAt(i,j);
 
             if(i==x1 && j==y1) temp.addAbove(aPlayer1);
             if(i==x2 && j==y2) temp.addAbove(aPlayer2);

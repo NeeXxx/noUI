@@ -2415,7 +2415,9 @@ boardmove.o: boardmove.cpp board.h \
 		../../../Qt/5.9/clang_64/lib/QtCore.framework/Headers/qtimer.h \
 		player.h \
 		../../../Qt/5.9/clang_64/lib/QtCore.framework/Headers/QPointer \
-		../../../Qt/5.9/clang_64/lib/QtCore.framework/Headers/qpointer.h
+		../../../Qt/5.9/clang_64/lib/QtCore.framework/Headers/qpointer.h \
+		../../../Qt/5.9/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.9/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o boardmove.o boardmove.cpp
 
 bomb.o: bomb.cpp bomb.h \

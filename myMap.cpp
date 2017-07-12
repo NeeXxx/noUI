@@ -1,5 +1,7 @@
 #include "myMap.h"
 
+#include <QDebug>
+#define ANGRY qDebug()<<"angry"<<endl;
 myMap::myMap():
     underMapForinit{
 {},//第0行，因为数组从零开始，所以第0行和第0列都是0
@@ -65,4 +67,8 @@ void myMap::cleanFlames()
         }
 }
 
-myMap m;
+myMap& myMap::getTheMap()
+{
+    static myMap theMap;
+    return theMap;
+}

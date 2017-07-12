@@ -36,7 +36,7 @@ bool board::tryMove(int x1,int y1,int x2,int y2) //from 1 to 2
 {
     if(!inMap(x2,y2))
         return false;
-    block& target=m.blockAt(x2,y2);
+    block& target=myMap::getTheMap().blockAt(x2,y2);
     if(target.inable())
     {
         if(target.hidable())
@@ -60,17 +60,17 @@ bool board::tryMove(int x1,int y1,int x2,int y2) //from 1 to 2
 
 bool board::trySimpleMove(int x1,int y1,int x2,int y2)
 {
-    m.moveAToB(x1,y1,x2,y2);
+    myMap::getTheMap().moveAToB(x1,y1,x2,y2);
     return true;
 }
 
 bool board::tryPush(int x1,int y1,int x2,int y2)
 {
-    block& target1=m.blockAt(x2,y2);
+    block& target1=myMap::getTheMap().blockAt(x2,y2);
     int x3=x2+x2-x1,y3=y2+y2-y1;
     if(!inMap(x3,y3))
         return false;
-    block& target2=m.blockAt(x3,y3);
+    block& target2=myMap::getTheMap().blockAt(x3,y3);
 
     bool flag;
     if(target2.inable())
@@ -99,6 +99,6 @@ bool board::tryPush(int x1,int y1,int x2,int y2)
 
 bool board::tryInToHide(int x1,int y1,int x2,int y2)
 {
-    m.moveAToB(x1,y1,x2,y2);
+    myMap::getTheMap().moveAToB(x1,y1,x2,y2);
     return true;
 }

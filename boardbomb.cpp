@@ -1,6 +1,8 @@
 #include "board.h"
 #include <QDebug>
 
+#include <QDebug>
+#define ANGRY qDebug()<<"angry"<<endl;
 void board::trySetBomb(player& p)
 {
     if(p.canSetBomb())
@@ -10,12 +12,12 @@ void board::trySetBomb(player& p)
 void board::setBomb(player& p)
 {
     int x=p.getX(),y=p.getY();
-    m.blockAt(x,y).addBomb(p);
+    myMap::getTheMap().blockAt(x,y).addBomb(p);
     p.setBomb();
-    m.blockAt(x,y).theBomb=new bomb(this,x,y,p.getBombPower(),&p);
-    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(const bomb&)),
+    myMap::getTheMap().blockAt(x,y).theBomb=new bomb(this,x,y,p.getBombPower(),&p);
+    connect(myMap::getTheMap().blockAt(x,y).theBomb,SIGNAL(explode(const bomb&)),
             &p,SLOT(bombExplode(const bomb&)));
-    connect(m.blockAt(x,y).theBomb,SIGNAL(explode(const bomb&)),
+    connect(myMap::getTheMap().blockAt(x,y).theBomb,SIGNAL(explode(const bomb&)),
             this,SLOT(exploded(const bomb&)));
 }//绘图是个问题
 
@@ -23,7 +25,7 @@ void board::exploded(const bomb& b)
 {
     for(int dir=dirUp;dir<=dirRight;dir++)
         setFlame(b,(direction)dir);
-    m.blockAt(b.getX(),b.getY()).theBombExplode();
+    myMap::getTheMap().blockAt(b.getX(),b.getY()).theBombExplode();ANGRY
 }
 
 void board::setFlame(const bomb& b,direction dir)
@@ -32,13 +34,13 @@ void board::setFlame(const bomb& b,direction dir)
     int power=b.getPower();
 
     for(int i=0,tx=x,ty=y;
-        inMap(tx,ty) && m.blockAt(tx,ty).canBeExploded() && (i<=power);
+        inMap(tx,ty) && myMap::getTheMap().blockAt(tx,ty).canBeExploded() && (i<=power);
         i++)
     {
         if(!(tx==x && ty==y))
-            m.blockAt(tx,ty).beExploded(dir);//
+            myMap::getTheMap().blockAt(tx,ty).beExploded(dir);//
         tryTrapPlayer(tx,ty);
         tx+=dx[dir],ty+=dy[dir];
     }
-    m.blockAt(x,y).addAbove(aFlame);
+    myMap::getTheMap().blockAt(x,y).addAbove(aFlame);
 }

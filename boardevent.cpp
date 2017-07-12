@@ -98,6 +98,6 @@ void board::timerEvent(QTimerEvent* event)
     {
         cnt++;
         repaint();
-        m.cleanFlames();
+        myMap::getTheMap().cleanFlames();
     }
 }

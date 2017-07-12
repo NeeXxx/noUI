@@ -54,3 +54,4 @@ RESOURCES += \
     res.qrc
 
 QMAKE_LFLAGS += -v
+
