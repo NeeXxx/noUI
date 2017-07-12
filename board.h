@@ -51,8 +51,12 @@ private:
     void trapPlayer(player&);
     void tryTrapPlayer(int,int);
 
+signals:
+    void trapPlayer(player&);
+
 private slots:
     void exploded(const bomb&);
+    void end(player&);
 
 protected:
     void paintEvent(QPaintEvent*) override;
