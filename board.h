@@ -56,7 +56,7 @@ signals:
 
 private slots:
     void exploded(const bomb&);
-    void end(player&);
+    void end(player& p);
 
 protected:
     void paintEvent(QPaintEvent*) override;

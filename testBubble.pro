@@ -35,7 +35,7 @@ SOURCES += \
     player.cpp \
     boardbomb.cpp \
     boardplayer.cpp \
-    rightpanel.cpp
+    gameover.cpp
 
 HEADERS += \
         widget.h \
@@ -46,9 +46,12 @@ HEADERS += \
     player.h \
     substances.h \
     direction.h \
-    rightpanel.h
+    gameover.h
 
 RESOURCES += \
     res.qrc
 
 QMAKE_LFLAGS += -v
+
+FORMS += \
+    gameover.ui
