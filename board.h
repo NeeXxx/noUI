@@ -52,7 +52,7 @@ private:
     void tryTrapPlayer(int,int);
 
 signals:
-    void trapPlayer(player&);
+    void signalTrapPlayer(player&);
 
 private slots:
     void exploded(const bomb&);
