@@ -20,6 +20,8 @@ board::board(QWidget* parent):QFrame(parent),p1(this,1,1,aP1ob),p2(this,9,9,aP2o
     initPlayer1();
     initPlayer2();
 
+    connect(this,SIGNAL(trapPlayer(player&)),
+            this,SLOT(end(player&)));
 }
 
 QSize board::sizeHint() const
