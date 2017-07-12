@@ -71,15 +71,16 @@ bool board::inMap(int x,int y)
 
 void board::end(player& p)
 {
-    qDebug()<<"angry"<<endl;
+    gameOver g(this);
+    g.setWindowTitle(QObject::tr("游戏结束啦"));
+    g.setWindowIcon(QIcon(":/images/images/Logo.png"));
     if(p==p1) //p1输了
     {
-
+        g.setLoser(1);
     }
     else //p2输了
     {
-
+        g.setLoser(2);
     }
-    gameOver g;
-    g.show();
+    g.exec();
 }

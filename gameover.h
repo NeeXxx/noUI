@@ -12,11 +12,15 @@ class gameOver : public QDialog
     Q_OBJECT
 
 public:
-    explicit gameOver(QWidget *parent = 0);
+    explicit gameOver(QWidget *parent);
+    void setLoser(int loser);
+    void paintEvent(QPaintEvent*);
     ~gameOver();
 
 private:
     Ui::gameOver *ui;
+    int winner;
+    QString filename;
 };
 
 #endif // GAMEOVER_H
