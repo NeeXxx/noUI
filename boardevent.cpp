@@ -52,7 +52,9 @@ void board::paintEvent(QPaintEvent*)
 
 void board::keyPressEvent(QKeyEvent* event)
 {
-    static map<int,direction> p1KTD,p2KTD; // key to direction
+    // key to direction
+    static map<int,direction> p1KTD,p2KTD;
+
     p1KTD[Qt::Key_W]=dirUp;
     p1KTD[Qt::Key_S]=dirDown;
     p1KTD[Qt::Key_A]=dirLeft;
