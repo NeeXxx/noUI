@@ -1,6 +1,11 @@
 #ifndef DIRECTION_H
 #define DIRECTION_H
 
+#include <map>
+#include <QKeyEvent>
+#include <QtWidgets>
+using namespace std;
+
 //和方向有关的地方，方向的顺序必须都是【上、下、左、右】
 
 enum direction{dirUp,dirDown,dirLeft,dirRight};

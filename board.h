@@ -13,10 +13,7 @@ class board:public QFrame
 public:
     board(QWidget* parent=0);
 
-    bool tryMoveUp(player&);
-    bool tryMoveDown(player&);
-    bool tryMoveLeft(player&);
-    bool tryMoveRight(player&);
+    bool tryMove(player&,direction);
 
     void trySetBomb(player&);
     void setBomb(player&);

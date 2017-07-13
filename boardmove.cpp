@@ -1,34 +1,10 @@
 #include "board.h"
 
-bool board::tryMoveUp(player& p)
+bool board::tryMove(player& p,direction dir)
 {
     int x=p.getX(),y=p.getY();
-    bool flag=tryMove(x,y,x-1,y);
-    if(flag) p.move(-1,0);
-    return flag;
-}
-
-bool board::tryMoveDown(player& p)
-{
-    int x=p.getX(),y=p.getY();
-    bool flag=tryMove(x,y,x+1,y);
-    if(flag) p.move(1,0);
-    return flag;
-}
-
-bool board::tryMoveLeft(player& p)
-{
-    int x=p.getX(),y=p.getY();
-    bool flag=tryMove(x,y,x,y-1);
-    if(flag) p.move(0,-1);
-    return flag;
-}
-
-bool board::tryMoveRight(player& p)
-{
-    int x=p.getX(),y=p.getY();
-    bool flag=tryMove(x,y,x,y+1);
-    if(flag) p.move(0,1);
+    bool flag=tryMove(x,y,x+dx[dir],y+dy[dir]);
+    if(flag) p.move(dx[dir],dy[dir]);
     return flag;
 }
 

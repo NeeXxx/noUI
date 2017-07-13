@@ -52,39 +52,29 @@ void board::paintEvent(QPaintEvent*)
 
 void board::keyPressEvent(QKeyEvent* event)
 {
-    bool flag;
+    static map<int,direction> p1KTD,p2KTD; // key to direction
+    p1KTD[Qt::Key_W]=dirUp;
+    p1KTD[Qt::Key_S]=dirDown;
+    p1KTD[Qt::Key_A]=dirLeft;
+    p1KTD[Qt::Key_D]=dirRight;
+
+    p2KTD[Qt::Key_Up]=dirUp;
+    p2KTD[Qt::Key_Down]=dirDown;
+    p2KTD[Qt::Key_Left]=dirLeft;
+    p2KTD[Qt::Key_Right]=dirRight;
+
+    if(p1KTD.count(event->key()))
+        tryMove(p1,p1KTD[event->key()]);
+    if(p2KTD.count(event->key()))
+        tryMove(p2,p2KTD[event->key()]);
     switch(event->key())
     {
     //p1:
-    case Qt::Key_W:
-        tryMoveUp(p1);
-        break;
-    case Qt::Key_S:
-        tryMoveDown(p1);
-        break;
-    case Qt::Key_A:
-        tryMoveLeft(p1);
-        break;
-    case Qt::Key_D:
-        tryMoveRight(p1);
-        break;
     case Qt::Key_J:
         trySetBomb(p1);
         break;
 
-    //*p2:
-    case Qt::Key_Up:
-        flag=tryMoveUp(p2);
-        break;
-    case Qt::Key_Down:
-        flag=tryMoveDown(p2);
-        break;
-    case Qt::Key_Left:
-        flag=tryMoveLeft(p2);
-        break;
-    case Qt::Key_Right:
-        flag=tryMoveRight(p2);
-        break;
+    //p2:
     case Qt::Key_Space:
         trySetBomb(p2);
         break;
