@@ -4,7 +4,7 @@
 #include <QPainter>
 
 gameOver::gameOver(QWidget *parent) :
-    ui(new Ui::gameOver)
+    ui(new Ui::gameOver),
     QDialog(parent)
 {
     ui->setupUi(this);
@@ -12,8 +12,8 @@ gameOver::gameOver(QWidget *parent) :
     p.setBrush(this->backgroundRole(),QBrush(QColor(255,255,255)));
     this->setPalette(p);
     this->setAutoFillBackground(true);
-    this->setMinimumSize(400,250);
-    this->setMaximumSize(400,250);
+    this->setMinimumSize(400,200);
+    this->setMaximumSize(400,200);
 }
 
 gameOver::~gameOver()
@@ -38,5 +38,5 @@ void gameOver::paintEvent(QPaintEvent *)
     endImg.load(":/images/images/over.png");
     painter.drawPixmap(0,0, endImg);
     endImg.load(fullName);
-    painter.drawPixmap(100,80, endImg);
+    painter.drawPixmap(80,80, endImg);
 }

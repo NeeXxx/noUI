@@ -180,28 +180,6 @@
    <iconset resource="res.qrc">
     <normaloff>:/images/images/Logo.png</normaloff>:/images/images/Logo.png</iconset>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>60</y>
-     <width>401</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>微软雅黑</family>
-     <pointsize>32</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>玩家     胜出！</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
  </widget>
  <resources>
   <include location="res.qrc"/>
